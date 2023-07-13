@@ -21,7 +21,7 @@ employeeRouter.post('/add',async(req,res)=>{
 employeeRouter.get("/" , async(req,res)=>{
     try {
         const employee = await EmployeeModel.find({empID : req.body.empID})
-        res.status(200).send(note)
+        res.status(200).send(employee)
     } catch (err) {
         res.status(400).send({err:err.message})
     }
